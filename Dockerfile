@@ -61,8 +61,15 @@ RUN apt-get update && \
 #####################################
 # odoo source, user, docker folders #
 #####################################
+<<<<<<< HEAD
 RUN git clone --depth=1 -b ${ODOO_BRANCH} https://github.com/iCivic/odoo.git $ODOO_SOURCE_DIR && \
 	adduser --system --quiet --shell=/bin/bash --home=/opt/odoo --group odoo && \
+=======
+COPY iDu/odoo-10.0 $ODOO_SOURCE_DIR
+#RUN git clone --depth=1 -b ${ODOO_BRANCH} https://github.com/iCivic/odoo.git $ODOO_SOURCE_DIR && \
+#    adduser --system --quiet --shell=/bin/bash --home=/opt/odoo --group odoo && \
+RUN adduser --system --quiet --shell=/bin/bash --home=/opt/odoo --group odoo && \
+>>>>>>> 94cb69e836bfb4331d418b85610547bab5e1e4b6
     chown -R odoo:odoo $ODOO_SOURCE_DIR && \
     mkdir -p $ODOO_SOURCE_DIR && chown odoo $ODOO_SOURCE_DIR && \
     mkdir -p $ADDONS_DIR/extra && chown -R odoo $ADDONS_DIR && \
