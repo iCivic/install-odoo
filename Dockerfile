@@ -54,6 +54,7 @@ RUN apt-get update && \
     pip install pysftp && \
     pip install rotate-backups && \
     pip install oauthlib && \
+	pip install xlsxwriter && \
     pip install requests --upgrade && \
     # check that pip is not broken after requests --upgrade
     pip --version
@@ -80,10 +81,10 @@ COPY odoo-backup.py /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/odoo-backup.py && \
     chown odoo:odoo $OPENERP_SERVER && \
-    CLONE_IT_PROJECTS_LLC=no \
-    CLONE_OCA=no \
+    CLONE_IT_PROJECTS_LLC=yes \
+    CLONE_OCA=yes \
     INIT_ODOO_CONFIG=docker-container \
-    UPDATE_ADDONS_PATH=no \
+    UPDATE_ADDONS_PATH=yes \
     ADD_AUTOINSTALL_MODULES="['ir_attachment_force_storage', 'base_session_store_psql']" \
     ADD_IGNORED_DATABASES="['session_store']" \
     bash -x install-odoo-saas.sh
