@@ -61,8 +61,8 @@ RUN apt-get update && \
 #####################################
 # odoo source, user, docker folders #
 #####################################
-RUN git clone --depth=1 -b ${ODOO_BRANCH} https://github.com/odoo/odoo.git $ODOO_SOURCE_DIR && \
-    adduser --system --quiet --shell=/bin/bash --home=/opt/odoo --group odoo && \
+RUN git clone --depth=1 -b ${ODOO_BRANCH} https://github.com/iCivic/odoo.git $ODOO_SOURCE_DIR && \
+	adduser --system --quiet --shell=/bin/bash --home=/opt/odoo --group odoo && \
     chown -R odoo:odoo $ODOO_SOURCE_DIR && \
     mkdir -p $ODOO_SOURCE_DIR && chown odoo $ODOO_SOURCE_DIR && \
     mkdir -p $ADDONS_DIR/extra && chown -R odoo $ADDONS_DIR && \
@@ -80,10 +80,10 @@ COPY odoo-backup.py /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/odoo-backup.py && \
     chown odoo:odoo $OPENERP_SERVER && \
-    CLONE_IT_PROJECTS_LLC=yes \
-    CLONE_OCA=yes \
+    CLONE_IT_PROJECTS_LLC=no \
+    CLONE_OCA=no \
     INIT_ODOO_CONFIG=docker-container \
-    UPDATE_ADDONS_PATH=yes \
+    UPDATE_ADDONS_PATH=no \
     ADD_AUTOINSTALL_MODULES="['ir_attachment_force_storage', 'base_session_store_psql']" \
     ADD_IGNORED_DATABASES="['session_store']" \
     bash -x install-odoo-saas.sh
@@ -106,5 +106,5 @@ VOLUME ["/mnt/data-dir", \
 #
 # we don't add /mnt/odoo-source, /mnt/addons, /mnt/config to VOLUME in order to allow modify theirs content in inherited dockers
 
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["/mnt/odoo-source/odoo-bin"]
+#ENTRYPOINT ["/entrypoint.sh"]
+#CMD ["/mnt/odoo-source/odoo-bin"]
