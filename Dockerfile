@@ -94,6 +94,8 @@ COPY reset-admin-passwords.py /
 # docker configuration #
 ########################
 COPY ./entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+
 EXPOSE 8069 8072
 USER odoo
 VOLUME ["/mnt/data-dir", \
@@ -106,5 +108,5 @@ VOLUME ["/mnt/data-dir", \
 #
 # we don't add /mnt/odoo-source, /mnt/addons, /mnt/config to VOLUME in order to allow modify theirs content in inherited dockers
 
-#ENTRYPOINT ["/entrypoint.sh"]
-#CMD ["/mnt/odoo-source/odoo-bin"]
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["/mnt/odoo-source/odoo-bin"]
