@@ -284,8 +284,7 @@
      REPOS=( "${REPOS[@]}" "https://github.com/OCA/server-tools.git OCA/server-tools")
      REPOS=( "${REPOS[@]}" "https://github.com/OCA/reporting-engine.git OCA/reporting-engine")
      REPOS=( "${REPOS[@]}" "https://github.com/OCA/rma.git OCA/rma")
-     #REPOS=( "${REPOS[@]}" "https://github.com/OCA/contract.git OCA/contract")
-	 REPOS=( "${REPOS[@]}" "https://github.com/iCivic/contract.git OCA/contract")	 
+     REPOS=( "${REPOS[@]}" "https://github.com/iCivic/contract.git OCA/contract")	 
      REPOS=( "${REPOS[@]}" "https://github.com/OCA/sale-workflow.git OCA/sale-workflow")
      REPOS=( "${REPOS[@]}" "https://github.com/OCA/bank-payment.git OCA/bank-payment")
      REPOS=( "${REPOS[@]}" "https://github.com/OCA/bank-statement-import.git OCA/bank-statement-import")
@@ -296,17 +295,13 @@
 
  if [[ "$CLONE_IT_PROJECTS_LLC" == "yes" ]]
  then
-     #REPOS=( "${REPOS[@]}" "https://github.com/it-projects-llc/e-commerce.git it-projects-llc/e-commerce")
-	 REPOS=( "${REPOS[@]}" "https://github.com/iCivic/e-commerce.git it-projects-llc/e-commerce")	 
+     REPOS=( "${REPOS[@]}" "https://github.com/iCivic/e-commerce.git it-projects-llc/e-commerce")	 
      REPOS=( "${REPOS[@]}" "https://github.com/it-projects-llc/pos-addons.git it-projects-llc/pos-addons")
-     #REPOS=( "${REPOS[@]}" "https://github.com/it-projects-llc/access-addons.git it-projects-llc/access-addons")
-	 REPOS=( "${REPOS[@]}" "https://github.com/iCivic/access-addons.git it-projects-llc/access-addons")	 
-     #REPOS=( "${REPOS[@]}" "https://github.com/it-projects-llc/website-addons.git it-projects-llc/website-addons")
-	 REPOS=( "${REPOS[@]}" "https://github.com/iCivic/website-addons.git it-projects-llc/website-addons")	 
+     REPOS=( "${REPOS[@]}" "https://github.com/iCivic/access-addons.git it-projects-llc/access-addons")	 
+     REPOS=( "${REPOS[@]}" "https://github.com/iCivic/website-addons.git it-projects-llc/website-addons")	 
      REPOS=( "${REPOS[@]}" "https://github.com/it-projects-llc/misc-addons.git it-projects-llc/misc-addons") 
      REPOS=( "${REPOS[@]}" "https://github.com/it-projects-llc/mail-addons.git it-projects-llc/mail-addons")
-     #REPOS=( "${REPOS[@]}" "https://github.com/it-projects-llc/odoo-saas-tools.git it-projects-llc/odoo-saas-tools")
-	 REPOS=( "${REPOS[@]}" "https://github.com/iCivic/odoo-saas-tools.git it-projects-llc/odoo-saas-tools")
+     REPOS=( "${REPOS[@]}" "https://github.com/iCivic/odoo-saas-tools.git it-projects-llc/odoo-saas-tools")
      REPOS=( "${REPOS[@]}" "https://github.com/it-projects-llc/odoo-telegram.git it-projects-llc/odoo-telegram")
  fi
 
